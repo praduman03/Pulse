@@ -1,4 +1,12 @@
-from fastapi import Depends, FastAPI, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi import FastAPI
+
 
 app = FastAPI()
+
+@app.get('/')
+def index():
+    return {'data':{"name":"sarthak"}}
+
+@app.get('/about')
+def about():
+    return {'data':"about"}
