@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+//import LoginBg from '../assets/blob-scene-haikei.svg'
+import LoginBg from '../assets/login-bg.png'
 
 const Account = () => {
+  const [dark, setDark] = useState(false);
+
   return (
     <div className='login-wrapper'>
       <div className='login-section'>
+        <img src={LoginBg} alt="" className='login-bg'/>
+        <button onClick={() => setDark(!dark)}>Toggle</button>
+        <div className='bg-img'>
+        </div>
         <div className='avatar-container'></div>
         <div className='form-container'>
             <div className='type-switch'>
@@ -11,8 +19,8 @@ const Account = () => {
                 <div>Login</div>
             </div>
 
-            <label htmlFor="input">Email or Username<input type="text" placeholder='Enter Email or Username...' /></label>
-            <label htmlFor="input">Password<input type="password" placeholder='Password...' /></label>
+            <span>Email or Username</span> <input type="text" placeholder='Enter Email or Username...' />
+            <span>Password</span><input type="password" placeholder='Password...' />
 
             <span>Forgot Password?</span>
 
@@ -27,4 +35,4 @@ const Account = () => {
   )
 }
 
-export default Account
+export default Account;
